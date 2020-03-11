@@ -1,44 +1,61 @@
 import React from 'react'
-import { Row, Col } from 'antd'
-import { Container, Img, ColoredText } from './style'
+import { LimitWidth } from '~/components/blocks/Styles'
+import Img from '~/components/blocks/Img'
+import {
+  Container,
+  Title,
+  Hr,
+  Paragraph,
+  Images,
+  ImageContainer,
+  ImgText,
+  ColoredText,
+  ViewMore,
+} from './style'
 
 const images = [
   {
-    alt: 'image1',
+    name: 'image1',
     src: '/pic.jpg',
   },
   {
-    alt: 'image2',
+    name: 'image2',
     src: '/pic2.jpg',
   },
   {
-    alt: 'image3',
+    name: 'image3',
     src: '/pic3.jpg',
   },
   {
-    alt: 'image4',
+    name: 'image4',
     src: '/pic4.jpg',
   },
 ]
 
 const WorkSection = () => (
   <Container>
-    <h2>
-      What we Do<ColoredText>.</ColoredText>
-    </h2>
-    <hr />
-    High quality content improves the value of your project. Through more sales,
-    more excitement, more decisions and more truth. When you grow, I grow.
-    <br />
-    This is what I do.
-    <Row>
-      {images.map(image => (
-        <Col key={image.src} span={6}>
-          <Img alt={image.alt} src={image.src} />
-        </Col>
-      ))}
-    </Row>
-    <button type="button">View more</button>
+    <LimitWidth maxWidth={800}>
+      <Title>
+        What we Do<ColoredText>.</ColoredText>
+      </Title>
+      <Hr />
+      <Paragraph>
+        High quality content improves the value of your project. Through more
+        sales, more excitement, more decisions and more truth. When you grow, I
+        grow.
+        <br />
+      </Paragraph>
+      <Paragraph>This is what I do.</Paragraph>
+      <Images>
+        {images.map(image => (
+          <ImageContainer key={image.src}>
+            <Img alt={image.name} src={image.src} />
+            <ImgText>{image.name}</ImgText>
+          </ImageContainer>
+        ))}
+      </Images>
+      <ViewMore type="button">View more</ViewMore>
+    </LimitWidth>
   </Container>
 )
 
