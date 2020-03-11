@@ -40,6 +40,7 @@ export const ImageContainer = styled.span`
   display: block;
   margin-left: 5px;
   text-align: left;
+  width: 50%;
 `
 
 export const ImgText = styled.span`
