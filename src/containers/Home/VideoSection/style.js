@@ -17,7 +17,7 @@ export const Overlay = styled.span`
   background: #444;
 `
 
-export const TextContainer = styled.h1`
+export const TextContainer = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -29,14 +29,14 @@ export const TextContainer = styled.h1`
   align-items: center;
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   color: #fff;
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
 
   span {
-    color: yellow;
+    color: ${props => props.theme.yellow};
   }
 `
 

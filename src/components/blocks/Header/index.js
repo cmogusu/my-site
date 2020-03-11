@@ -3,15 +3,8 @@ import snakeCase from 'lodash/snakeCase'
 import { Drawer, Icon } from 'antd'
 import MenuBurger from '~/components/blocks/MenuBurger'
 import whiteLogo from '~/assets/images/logo-white.png'
+import routes from '~/constants/routes'
 import { Container, LimitWidth, Logo, MenuItems, MenuItem } from './style'
-
-const links = [
-  {
-    url: '/',
-    name: 'Home',
-    icon: 'loading',
-  },
-]
 
 const Header = () => {
   const [showDrawer, toggleDrawer] = useState(false)
@@ -31,11 +24,11 @@ const Header = () => {
       >
         <nav>
           <MenuItems>
-            {links.map(link => (
-              <MenuItem key={snakeCase(link.name)}>
-                <a href={link.url}>
-                  <Icon type={link.icon} />
-                  {link.name}
+            {routes.map(route => (
+              <MenuItem key={snakeCase(route.name)}>
+                <a href={route.url}>
+                  <Icon type={route.icon} />
+                  {route.name}
                 </a>
               </MenuItem>
             ))}

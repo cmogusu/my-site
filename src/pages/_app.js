@@ -5,6 +5,9 @@ import { ThemeProvider } from 'styled-components'
 const theme = {
   colors: {
     primary: '#0070f3',
+    yellow: 'yellow',
+    link: '#333',
+    linkHover: '#1890ff',
   },
 }
 
